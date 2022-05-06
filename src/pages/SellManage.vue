@@ -1,13 +1,10 @@
 <template>
-<div></div>
+<div>销售信息</div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'PersonalManage',
 }
 </script>
 
