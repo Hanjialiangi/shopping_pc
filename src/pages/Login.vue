@@ -1,0 +1,93 @@
+<template>
+<div className="bg">
+<div className="box">
+    <div class="root">用户登录</div>
+<el-form :model="form" label-width="120px">
+    <el-form-item label="用户名">
+      <el-input v-model="form.username" />
+    </el-form-item>
+      <el-form-item label="密码">
+      <el-input type="password" v-model="form.password" />
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="onSubmit">登陆</el-button>
+      <el-button @click="onReset">重置</el-button>
+    </el-form-item>
+</el-form>
+</div>
+</div>
+</template>
+
+<script>
+import {username,password} from '../constant'
+import {hex_md5} from '../until'
+import { ElMessage } from 'element-plus'
+import Cookies from 'js-cookie';
+
+export default {
+  name: 'Login',
+  data:function(){
+      return {
+          form:{
+              username:"",
+              password:""
+          }
+      }
+  },
+  methods:{
+      onSubmit(){
+          if(this.form.username===username&& this.form.password===password){
+              Cookies.set('token',hex_md5(password)); //设置令牌
+             ElMessage({
+                    showClose: true,
+                    message: '登陆成功',
+                    type: 'success',
+                }) 
+            setTimeout(() => {
+                window.location.href="/home"
+            }, 3000);
+          }else{
+                ElMessage({
+                    showClose: true,
+                    message: '登陆失败,请检查用户名或者密码.',
+                    type: 'error',
+                }) 
+          }
+      },
+      onReset(){
+          this.form={username:'',password:''}
+      }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!--https://api.btstu.cn/sjbz/api.php    https://api.paugram.com/bing/   https://api.mtyqx.cn/api/random.php -->
+<style scoped>
+.bg{
+    width:100vw;
+    height:100vh;
+    background-image:url(https://api.btstu.cn/sjbz/api.php) ; 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.box{
+    position: absolute;
+    border-radius: 10px;
+    top:35vh;
+    left:35vw;
+    background-color:#fff ;
+    width: 400px;
+    height: 300px;
+}
+.root{
+    margin:10px;
+    font-size:16px;
+}
+.el-form{
+    margin:30px;
+    position: relative;
+    left:-20px;
+    top:50px;
+}
+</style>

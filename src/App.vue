@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-  <el-header>
+  <el-header v-if="user">
     <p>商场进存销管理系统</p>
     <el-popconfirm title="确认注销登陆?" @confirm="handleWindow">
       <template #reference>
@@ -14,7 +14,7 @@
      <label class="name">{{user}}</label>
   </el-header>
   <el-container>
-    <el-aside width="200px"><MenuList/></el-aside>
+    <el-aside v-if="user" width="200px"><MenuList/></el-aside>
     <el-container>
       <el-main><router-view></router-view></el-main>
     </el-container>
@@ -25,6 +25,7 @@
 
 <script>
 import MenuList from './components/MenuList.vue'
+import Cookies  from 'js-cookie'
 import { ElMessage } from 'element-plus'
 
 export default {
@@ -34,7 +35,7 @@ export default {
   },
   data:function(){
     return {
-      user:'admin'
+      user:'',
     }
   },
   methods:{
@@ -43,6 +44,13 @@ export default {
     message: '注销成功',
     type: 'success',
   })
+    }
+  },
+  mounted:function(){
+    const token = Cookies.get('token');
+    console.log(token);
+    if(token){
+      this.user = 'admin'
     }
   }
 }
@@ -74,6 +82,10 @@ export default {
   float:right;
   position: relative;
   left:90px;
+}
+.el-main{
+    padding:0 !important;
+    overflow: hidden !important;
 }
 
 </style>

@@ -155,3 +155,6 @@ export const depotInfo=[{
     img:'',
     number:200
 }]
+
+export const username = 'admin';
+export const password ='12345';

@@ -5,7 +5,6 @@ import 'element-plus/dist/index.css';
 import router from './router/router'
 import { createApp } from 'vue'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import Fragment from 'vue-fragment'
 
 const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
@@ -13,7 +12,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 app.use(router)
 app.use(ElementPlus)
-app.use(Fragment.Plugin)
  
 app.mount('#app')
 

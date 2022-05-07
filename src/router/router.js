@@ -1,7 +1,10 @@
 import { createRouter,createWebHistory } from 'vue-router'
+import Cookies from 'js-cookie'
 
-
-const routers=[{
+const token = Cookies.get('token');
+let routers =[];
+if(token){
+ routers=[{
     path:'/',
     redirect:'/goods/manage'
 },{
@@ -58,7 +61,22 @@ const routers=[{
 },{
     path:'/depot/manage/edit/:id',
     component:()=>import('../pages/DepotManage/DepotEdit.vue')
+},{
+    path:'/:pathMatch(.*)',
+    redirect:'/goods/manage'
 }]
+}else{
+    routers=[{
+        path:'/',
+        redirect:'/login'
+    },{
+        path:'/login',
+        component:()=>import('../pages/Login.vue')
+    },{
+        path:'/:pathMatch(.*)', //vue3 正则匹配/:pathMatch(.*)或者/:pathMatch(.*)* 或者/:catchAll(.*)
+        redirect:'/login'
+    }]
+}
 
 const router = createRouter({
     history: createWebHistory(),
