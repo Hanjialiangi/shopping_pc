@@ -1,7 +1,8 @@
 <template>
 <div className="bg">
-<div className="box">
+<div className="box" v-if="isShow">
     <div class="root">用户登录</div>
+    <img class="img" src="../assets/close.svg" @click="handleTurn"/>
 <el-form :model="form" label-width="120px">
     <el-form-item label="用户名">
       <el-input v-model="form.username" />
@@ -15,6 +16,7 @@
     </el-form-item>
 </el-form>
 </div>
+<el-avatar v-show="!isShow" class="entry" size="large" @click="handleTurn">登陆</el-avatar>
 </div>
 </template>
 
@@ -31,7 +33,8 @@ export default {
           form:{
               username:"",
               password:""
-          }
+          },
+          isShow:true
       }
   },
   methods:{
@@ -56,6 +59,9 @@ export default {
       },
       onReset(){
           this.form={username:'',password:''}
+      },
+      handleTurn(){
+          this.isShow =!this.isShow; //取反
       }
   }
 }
@@ -89,5 +95,19 @@ export default {
     position: relative;
     left:-20px;
     top:50px;
+}
+.img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 370px;
+}
+.entry {
+    position: absolute;
+    background-color:aqua;
+    bottom:0;
+    right:0;
+    margin:20px;
 }
 </style>
