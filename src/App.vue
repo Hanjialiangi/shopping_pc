@@ -40,10 +40,12 @@ export default {
   },
   methods:{
     handleWindow(){
+      Cookies.remove('token');
        ElMessage({
-    message: '注销成功',
-    type: 'success',
-  })
+        message: '注销成功',
+        type: 'success',
+      })
+      window.location.href="/login";
     }
   },
   mounted:function(){
