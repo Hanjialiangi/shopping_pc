@@ -1,0 +1,157 @@
+export const GoodsInfo=[{
+    id:1,
+    isbn:'2022430001',
+    name:'巧乐兹',
+    price:'14.00',
+    img:'https://img0.baidu.com/it/u=3178556882,378145805&fm=253&fmt=auto&app=138&f=JPEG?w=483&h=500',
+    description:'香甜可口，人间美味，解暑神器',
+    specifications:'500g'
+},{
+    id:2,
+    isbn:'2022430002',
+    name:'方便面',
+    price:'5.00',
+    img:'https://img2.baidu.com/it/u=943611730,1086454726&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500',
+    description:'康师傅桶装',
+    specifications:'500g'
+},{
+    id:3,
+    isbn:'2022430003',
+    name:'乐事薯片',
+    price:'7.00',
+    img:'https://img1.baidu.com/it/u=2572024563,133479667&fm=253&fmt=auto&app=138&f=JPEG?w=350&h=350',
+    description:'休闲零食美国经典原味',
+    specifications:'70g'
+}]
+
+export  const personalInfo = [{
+    id:1,
+    jobNo:'001',
+    name:'张三',
+    avator:'',
+    work_time:"四年",
+    wage:'14000',
+    note:'优秀员工',
+    type:'职工'
+},{
+    id:2,
+    jobNo:'002',
+    name:'李四',
+    avator:'',
+    work_time:"一年一个月",
+    wage:'8000',
+    note:'一般员工',
+    type:'职工'
+},{
+    id:3,
+    jobNo:'003',
+    name:'王五',
+    avator:'',
+    work_time:"三年两个月",
+    wage:'10000',
+    note:'普通员工',
+    type:'职工'
+},{
+    id:4,
+    jobNo:'004',
+    name:'赵六',
+    avator:'',
+    work_time:"三年",
+    wage:'',
+    note:'无',
+    type:'供应商'
+}]
+
+export  const sellInfo = [{
+    id:1,
+    No:'001',
+    name:'面包',
+    img:'',
+    number:100,
+    sum:400
+},{
+    id:2,
+    No:'002',
+    name:'饼干',
+    img:'',
+    number:50,
+    sum:400
+},{
+    id:3,
+    No:'003',
+    name:'豆腐干',
+    img:'',
+    number:100,
+    sum:400
+},{
+    id:4,
+    No:'004',
+    name:'可乐',
+    img:'',
+    number:200,
+    sum:600
+}]
+
+export  const stockInfo = [{
+    id:1,
+    No:'001',
+    name:'面包',
+    img:'',
+    number:100,
+    sum:400,
+    people:'张三',
+    time:'2022-05-06'
+},{
+    id:2,
+    No:'002',
+    name:'饼干',
+    img:'',
+    number:50,
+    sum:400,
+    people:'张三',
+    time:'2022-05-06'
+},{
+    id:3,
+    No:'003',
+    name:'豆腐干',
+    img:'',
+    number:100,
+    sum:400,
+    people:'张三',
+    time:'2022-05-06'
+},{
+    id:4,
+    No:'004',
+    name:'可乐',
+    img:'',
+    number:200,
+    sum:600,
+    people:'张三',
+    time:'2022-05-06'
+}]
+
+export const depotInfo=[{
+    id:1,
+    No:'001',
+    name:'面包',
+    img:'',
+    number:100
+},{
+    id:2,
+    No:'002',
+    name:'饼干',
+    img:'',
+    number:50
+},{
+    id:3,
+    No:'003',
+    name:'豆腐干',
+    img:'',
+    number:100
+},{
+    id:4,
+    No:'004',
+    name:'可乐',
+    img:'',
+    number:200
+}]

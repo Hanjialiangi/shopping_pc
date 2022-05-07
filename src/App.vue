@@ -1,7 +1,18 @@
 <template>
   <div id="app">
     <el-container>
-  <el-header><p>商场进存销管理系统</p></el-header>
+  <el-header>
+    <p>商场进存销管理系统</p>
+    <el-popconfirm title="确认注销登陆?" @confirm="handleWindow">
+      <template #reference>
+        <el-avatar
+          style="float:right;margin-top:-30px;margin-right:80px"
+          src="https://api.vvhan.com/api/avatar"
+        />
+      </template>
+    </el-popconfirm>
+     <label class="name">{{user}}</label>
+  </el-header>
   <el-container>
     <el-aside width="200px"><MenuList/></el-aside>
     <el-container>
@@ -14,11 +25,25 @@
 
 <script>
 import MenuList from './components/MenuList.vue'
+import { ElMessage } from 'element-plus'
 
 export default {
   name: 'App',
   components: {
    MenuList
+  },
+  data:function(){
+    return {
+      user:'admin'
+    }
+  },
+  methods:{
+    handleWindow(){
+       ElMessage({
+    message: '注销成功',
+    type: 'success',
+  })
+    }
   }
 }
 </script>
@@ -43,6 +68,12 @@ export default {
 }
 .el-aside{
   overflow: hidden;
+}
+.name{
+  margin-top:-20px;
+  float:right;
+  position: relative;
+  left:90px;
 }
 
 </style>
