@@ -113,6 +113,7 @@ export default {
   },
   mounted:function(){
     this.total = personalInfo.length;
+    console.log(this.$store.state);
   }
 }
 </script>

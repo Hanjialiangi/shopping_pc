@@ -25,7 +25,8 @@ import {username,password} from '../constant'
 import {hex_md5} from '../until'
 import { ElMessage } from 'element-plus'
 import Cookies from 'js-cookie';
-
+// import {useStore} from 'vuex'
+// import { computed } from 'vue'
 export default {
   name: 'Login',
   data:function(){
@@ -37,10 +38,23 @@ export default {
           isShow:true
       }
   },
+//   setup(){
+//       let store = useStore();
+      
+//       const change=(username)=>{
+//           store.commit('change',username); // store.dispatch('change')
+//       }
+//       return {
+//           state:computed(() => store.state),
+//           change
+//       }
+//   },
   methods:{
       onSubmit(){
           if(this.form.username===username&& this.form.password===password){
               Cookies.set('token',hex_md5(password)); //设置令牌
+              //设置保存
+            // this.$store.commit('change',username);
              ElMessage({
                     showClose: true,
                     message: '登陆成功',
@@ -63,6 +77,9 @@ export default {
       handleTurn(){
           this.isShow =!this.isShow; //取反
       }
+  },
+  mounted:function(){
+      console.log(this.$store.state);
   }
 }
 </script>

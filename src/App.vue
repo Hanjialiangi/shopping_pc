@@ -53,6 +53,7 @@ export default {
     console.log(token);
     if(token){
       this.user = 'admin'
+      this.$store.commit('change','admin');
     }
   }
 }
