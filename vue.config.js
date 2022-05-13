@@ -1,9 +1,20 @@
-
-module.exports = {
-    devServer: {
-      host: '127.0.0.1',  // 域名
-      port: 8081,  // 端口
-      disableHostCheck: true
-    },
-    // publicPath: './',
+const path = require('path');
+function resolve (dir) {
+    return path.join(__dirname, dir)
 }
+module.exports = {
+    chainWebpack: config => {
+        //路径配置
+        config.resolve.alias
+            .set('assets', resolve('src/assets'))
+            .set('styles', resolve('src/assets/styles'))
+    },
+
+    // webpack-dev-server 相关配置  
+    devServer: {
+        // 调试端口
+         port: 8080,
+         disableHostCheck: true//这是内网穿透需要的配置的
+    }
+    //其他配置....
+  }

@@ -56,6 +56,6 @@ export default {
 
 <style scoped>
 .el-menu {
-    height:750px;
+    height:92.5vh;
 }
 </style>
