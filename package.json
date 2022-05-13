@@ -18,7 +18,8 @@
     "vue": "^3.2.33",
     "vue-hot-reload-api": "^2.3.4",
     "vue-router": "^4.0.15",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "webpack": "^5.72.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.13",
