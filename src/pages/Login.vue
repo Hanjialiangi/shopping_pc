@@ -92,7 +92,9 @@ export default {
     height:100vh;
     background-image:url(https://api.btstu.cn/sjbz/api.php) ; 
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
+    background-position:center;
+    background-size: cover;
 }
 .box{
     position: absolute;
@@ -126,5 +128,27 @@ export default {
     bottom:0;
     right:0;
     margin:20px;
+}
+@media screen and (max-width: 1000px) {
+    .box{
+        left:10vw;
+    }
+}
+
+
+@media screen and (max-width:400px){
+   .box{
+       width:300px;
+       height:200px;
+   }
+   .img {
+    left:270px;
+   }
+   .el-form{
+       position: relative;
+       left:-35px;
+       top:10px;
+       margin:0;
+   }
 }
 </style>
