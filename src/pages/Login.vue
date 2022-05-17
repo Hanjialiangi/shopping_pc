@@ -113,7 +113,7 @@ export default {
     margin:10px;
     font-size:16px;
 }
-/deep/.el-form-item__label{
+:deep().el-form-item__label{
     color: #000 !important;
 }
 .el-form{
