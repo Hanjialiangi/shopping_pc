@@ -101,13 +101,20 @@ export default {
     border-radius: 10px;
     top:35vh;
     left:35vw;
-    background-color:#fff ;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius:10px;
+    /* background-color:#fff ; */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     width: 400px;
     height: 300px;
 }
 .root{
     margin:10px;
     font-size:16px;
+}
+/deep/.el-form-item__label{
+    color: #000 !important;
 }
 .el-form{
     margin:30px;
