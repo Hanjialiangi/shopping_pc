@@ -2,7 +2,7 @@
 <div className="bg">
 <div className="box" v-if="isShow">
     <div class="root">用户登录</div>
-    <img class="img" src="../assets/close.svg" @click="handleTurn"/>
+    <div class="img" @click="handleTurn"></div>
 <el-form :model="form" label-width="120px">
     <el-form-item label="用户名">
       <el-input v-model="form.username" />
@@ -126,6 +126,8 @@ export default {
     width: 20px;
     height: 20px;
     position: absolute;
+    background-image:url('../assets/close.svg');
+    background-size:100% 100%;
     top: 10px;
     left: 370px;
 }
