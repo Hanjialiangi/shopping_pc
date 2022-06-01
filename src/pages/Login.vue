@@ -2,7 +2,7 @@
 <div className="bg">
 <div className="box" v-if="isShow">
     <div class="root">用户登录</div>
-    <img class="img" src="https://gitee.com/hanjialiangi/shopping_pc/raw/master/public/close.svg" @click="handleTurn"/>
+    <img class="img" src="../assets/close.svg" @click="handleTurn"/>
 <el-form :model="form" label-width="120px">
     <el-form-item label="用户名">
       <el-input v-model="form.username" />
