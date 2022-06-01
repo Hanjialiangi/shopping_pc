@@ -15,6 +15,7 @@ module.exports = {
         // 调试端口
          port: 8080,
          disableHostCheck: true//这是内网穿透需要的配置的
-    }
+    },
+    publicPath: '',
     //其他配置....
   }
